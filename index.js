@@ -55,10 +55,10 @@ function _generateConfigFlags(cmd) {
     flags.nodelete = true;
   }
 
-  if (slateEnv.getTimeoutValue()) {
+  if (slateEnv.getTimeoutValue) {
     flags.timeout = slateEnv.getTimeoutValue();
   }
-  if (slateEnv.getIgnoreFilesValue()) {
+  if (slateEnv.getIgnoreFilesValue && slateEnv.getIgnoreFilesValue()) {
     flags.ignoredFiles = slateEnv.getIgnoreFilesValue().split(':');
   }
 
